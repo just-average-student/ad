@@ -112,7 +112,7 @@ class StockExample(server.App):
             return plt.gcf()
         plt.figure(figsize=(20, 10)) 
         plt.title(f'{self.ticker} values for {regions[self.region]} region')
-        sns.heatmap(data_for_plot.pivot(index="Week", columns="Year", values=self.ticker), annot=True)
+        sns.heatmap(data_for_plot.pivot(index="Week", columns="Year", values=self.ticker), cmap="Greens", annot=True)
         return plt.gcf()
 
 app = StockExample()
